@@ -14,10 +14,13 @@ namespace CMP1903_A1_2324
          */
 
         //Property
-
+        int _dice_value = 0;
 
         //Method
-
+        int Roll() {
+            Random random = new Random();
+            _dice_value = randomNext(1, 7);
+            return _dice_value; }
 
     }
 }
