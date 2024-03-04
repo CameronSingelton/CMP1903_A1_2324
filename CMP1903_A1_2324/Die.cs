@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    internal class Die : Random
+    internal class Die
     {
         /*
          * The Die class should contain one property to hold the current die value,
