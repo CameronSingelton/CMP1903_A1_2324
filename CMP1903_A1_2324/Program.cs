@@ -6,16 +6,20 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    internal class Program
+  internal class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            /*
-             * Create a Game object and call its methods.
-             * Create a Testing object to verify the output and operation of the other classes.
-             */
-            Game game = new Game();
-            game.Roll_dice();
-        }
+      /*
+       * Create a Game object and call its methods.
+       * Create a Testing object to verify the output and operation of the other classes.
+       */
+      Console.WriteLine("testing code");
+      Testing testing = new Testing();
+      testing.Test();
+      Console.WriteLine("running code");
+      Game game = new Game();
+      game.Roll_dice();
     }
+  }
 }
