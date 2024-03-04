@@ -27,10 +27,10 @@ namespace CMP1903_A1_2324
       Game game = new Game();
       int Total_Value= game.Roll_dice();
       die.Roll();
-      Debug.Assert(die.Dice_value < 6, "number is over 6");
-      Debug.Assert(die.Dice_value > 1, "number is less than 1");
-      Debug.Assert(Total_Value < 18, "total is over 18 ");
-      Debug.Assert(Total_Value >3, "total is under 3 ");
+      Debug.Assert(die.Dice_value <= 6, "number is over 6");
+      Debug.Assert(die.Dice_value >= 1, "number is less than 1");
+      Debug.Assert(Total_Value <= 18, "total is over 18 ");
+      Debug.Assert(Total_Value >= 3, "total is under 3 ");
 
     }
 
