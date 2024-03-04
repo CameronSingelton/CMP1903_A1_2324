@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace CMP1903_A1_2324
 {
@@ -18,18 +18,18 @@ namespace CMP1903_A1_2324
         Die Dice_2 = new Die();
         Die Dice_3 = new Die();
         //Methods
-        public void Roll_dice() 
-          {
-            Random random = new Random();
-            //for (int i = 0; i < 100; i++)
-            {
-                //Console.WriteLine(random.Next(1, 7));
-                Dice_1.Roll();
-                Dice_2.Roll();
-                Dice_3.Roll();
-                
-                statistics(Dice_1.dice_value, Dice_2.dice_value, Dice_3.dice_value); }
-            }
+        public void Roll_dice()
+        {
+          Dice_1.Roll();
+          Thread.Sleep(10);
+          Dice_2.Roll();
+          Thread.Sleep(100);
+          Dice_3.Roll();
+          Thread.Sleep(10);
+
+
+            statistics(Dice_1.Dice_value, Dice_2.Dice_value, Dice_3.Dice_value); 
+        }
         public void statistics (int Dice_Value_1, int Dice_Value_2, int Dice_Value_3) 
         {
             int Total_Value = Dice_Value_1 + Dice_Value_2 + Dice_Value_3;

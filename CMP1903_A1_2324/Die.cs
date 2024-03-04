@@ -12,19 +12,21 @@ namespace CMP1903_A1_2324
          * The Die class should contain one property to hold the current die value,
          * and one method that rolls the die, returns and integer and takes no parameters.
          */
-        private int _dice_value = 6;
+        private int _Dice_value = 0;
         //Property
-        public int dice_value 
+        public int Dice_value 
         {
-            get { return _dice_value; }
-            set { _dice_value = value; }
+            get { return _Dice_value; }
+            set { _Dice_value = value; }
         }
         //Method
-        public int Roll()
+        ///<summary> 
+        ///makes a random number from 1 to 6 
+        ///</summary>
+        public void Roll()
         {
-            Random random = new Random();
-            _dice_value = random.Next(1,7);
-            return _dice_value;
-          }
+            Random _Random = new Random();
+            _Dice_value = _Random.Next(1, 7);
+        }
     }
 }
