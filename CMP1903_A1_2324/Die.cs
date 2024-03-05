@@ -15,7 +15,7 @@ namespace CMP1903_A1_2324
     //Property
     //creating Propertys to hold dice value and create the array
     private int _Dice_value = 0;
-    private int[] _Dice_values = { 0, 0, 0, 0, 0, 0, 0 };
+    private int[] _Dice_values = {0, 0, 0, 0, 0, 0, 0 };
     
     //getter and setter for _Dice_value
     public int Dice_value
@@ -40,12 +40,12 @@ namespace CMP1903_A1_2324
     public int[] ContinuousRoll(int Roll_count)
     {
       //creates instance of random
-      Random _Random = new Random();
+      Random Random = new Random();
       //for loop to control the amount of times it roll the dice
       for (int i = 0; i < Roll_count; i++)
       {
         //creates random number between 1,6 and adds 1 to the array position
-        _Dice_values[_Random.Next(1, 7)] = _Dice_values[_Random.Next(1, 7)] + 1;
+        _Dice_values[Random.Next(1, 7)] = _Dice_values[Random.Next(1, 7)] + 1;
       }
       //returns the array _Dice_values
       return _Dice_values;
