@@ -14,11 +14,17 @@ namespace CMP1903_A1_2324
        * Create a Game object and call its methods.
        * Create a Testing object to verify the output and operation of the other classes.
        */
+      //prints testing code to show that the code is being tested
       Console.WriteLine("testing code");
+      //creates instance of testing
       Testing testing = new Testing();
+      //calls function test from class testing
       testing.Test();
+      //prints testing code to show that the code is running
       Console.WriteLine("running code");
+      //creates instance of game
       Game game = new Game();
+      //calls game method of Rolls_dice
       game.Roll_dice();
     }
   }

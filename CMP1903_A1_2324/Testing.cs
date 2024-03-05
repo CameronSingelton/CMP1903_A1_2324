@@ -23,14 +23,17 @@ namespace CMP1903_A1_2324
     ///</summary>
     public void Test()
     {
+      //creates instance of die and game 
       Die die = new Die();
       Game game = new Game();
+      //calls game method Roll_dice
       int Total_Value= game.Roll_dice();
       die.Roll();
+      //checks if the values are with in the paramiters
       Debug.Assert(die.Dice_value <= 6, "number is over 6");
       Debug.Assert(die.Dice_value >= 1, "number is less than 1");
-      Debug.Assert(Total_Value <= 18, "total is over 18 ");
-      Debug.Assert(Total_Value >= 3, "total is under 3 ");
+      Debug.Assert(Total_Value <= 18, "total is over 18 (if large continous total might be over 18)");
+      Debug.Assert(Total_Value >= 3, "total is under 3 (if small continous totoal might be under 3)");
 
     }
 
