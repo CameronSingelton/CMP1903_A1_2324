@@ -19,7 +19,7 @@ namespace CMP1903_A1_2324
     ///<summary> 
     ///creates dice and then rolls the dice and gives statistics
     ///</summary>
-    public int Roll_dice()
+    public (int,int) Roll_dice()
     {
       Console.WriteLine("how many rolls do you want?");
       int Amount_rolls = int.Parse(Console.ReadLine());
@@ -38,7 +38,7 @@ namespace CMP1903_A1_2324
         Thread.Sleep(1);
         //calls statistics and returns the total value
         int totalValue = statistics(Dice_1.Dice_value, Dice_2.Dice_value, Dice_3.Dice_value);
-        return totalValue;
+        return (totalValue,3);
       }
       else
       {
@@ -48,7 +48,7 @@ namespace CMP1903_A1_2324
         int[] diceValues = Dice_1.ContinuousRoll(Amount_rolls);
         //gives array to Continuos_statistics and returns the total
         int Total = Continuos_statistics(diceValues);
-        return Total;
+        return (Total,Amount_rolls);
       }
     }
     ///<summary> 
