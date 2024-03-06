@@ -18,24 +18,21 @@ namespace CMP1903_A1_2324
      */
 
     //Method
-    ///<summary> 
-    ///tests values to make sure they are within parameters 
-    ///</summary>
+    ///<summary>tests values to make sure they are within parameters </summary>
     public void Test()
     {
       //creates instance of die and game 
       Die die = new Die();
       Game game = new Game();
-      //calls game method Roll_dice
-      var Total_Value= game.Roll_dice();
+      //calls game method Roll_dice and returns total of dice and amount of rolls 
+      var stats= game.Roll_dice();
       die.Roll();
       //checks if the values are with in the paramiters
       Debug.Assert(die.Dice_value <= 6, "number is over 6");
       Debug.Assert(die.Dice_value >= 1, "number is less than 1");
-      Debug.Assert(Total_Value.Item1 <= (Total_Value.Item2*6), $"total is over {Total_Value.Item2 * 6}");
-      Debug.Assert(Total_Value.Item1 >= (Total_Value.Item2), $"total is under{Total_Value.Item2}");
+      Debug.Assert(stats.Item1 <= (stats.Item2*6), $"total is over {stats.Item2 * 6}");
+      Debug.Assert(stats.Item1 >= (stats.Item2), $"total is under{stats.Item2}");
 
     }
-
   }
 }
