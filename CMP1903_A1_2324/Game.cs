@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Xml.Schema;
@@ -21,52 +22,41 @@ namespace CMP1903_A1_2324
         ///<summary> creates dice and then rolls the dice and gives statistics</summary>
         ///<returns>returns total value and amount of rolls</returns>
         public (int,int) Roll_dice()
-    {
-      try
-      {
-        Console.WriteLine("how many rolls do you want?");
-        int Amount_rolls = int.Parse(Console.ReadLine());
-        if (Amount_rolls <= 0)
         {
-          throw new ArgumentException();
-        }
-        if (Amount_rolls == 3)
-        {
-          //creates instatnces of die
-          Die Dice_1 = new Die();
-          Die Dice_2 = new Die();
-          Die Dice_3 = new Die();
-          // calls the ROll for all die 
-          Dice_1.Roll();
-          Thread.Sleep(1);
-          Dice_2.Roll();
-          Thread.Sleep(1);
-          Dice_3.Roll();
-          Thread.Sleep(1);
-          //calls statistics and returns the total value
-          int totalValue = statistics(Dice_1.Dice_value, Dice_2.Dice_value, Dice_3.Dice_value);
-          return (totalValue, 3);
-        }
-        else
-        {
-          //creates instance of dice
-          Die Dice_1 = new Die();
-          //calls ContinuousRoll and returns the array 
-          int[] diceValues = Dice_1.Roll(Amount_rolls);
-          //gives array to Continuos_statistics and returns the total
-          int Total = Continuos_statistics(diceValues);
-          return (Total, Amount_rolls);
-        }
-      }
-      catch (Exception ex) 
-      {
-        Console.WriteLine(ex.ToString());
-        Console.WriteLine("try again");
-        Roll_dice();
-        return (0, 0);
-      }
+          try
+          {
+              Console.WriteLine("what game do you want to play Sevenout(7out) or Three or More(TM)");
+              string game = Console.ReadLine().ToLower();
+                Console.WriteLine(game);
+              if (game == "tm" ||game=="three or more")
+                {
+                    ThreeOrMore threeOrMore = new ThreeOrMore();
+                    int totalscore = threeOrMore.Game();
+                    Console.WriteLine(totalscore); 
+                }
+              else if (game == "7out" || game == "sevenout")
+                {
+                    SevensOut sevensOut = new SevensOut();
+                    int totalscore=sevensOut.Game();
+                    Console.WriteLine(totalscore);
 
-    }
+                }
+              else
+                {
+                    throw new ArgumentException();
+                }
+              return (0,0);
+       
+          }
+          catch (Exception ex) 
+          {
+            Console.WriteLine(ex.ToString());
+            Console.WriteLine("try again");
+            Roll_dice();
+            return (0, 0);
+          }
+
+        }
     ///<summary> takes dice values and outputs statistics </summary>
     ///<param name="Dice_Value_1">contains first dice value</param>
     ///<param name="Dice_Value_2">contains second dice value</param>

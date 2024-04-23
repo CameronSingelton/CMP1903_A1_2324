@@ -33,7 +33,5 @@ namespace CMP1903_A1_2324
       //makes a random intiger between 1 and 6
       _diceValue = _Random.Next(1, 7);
     }
-
-
   }
 }

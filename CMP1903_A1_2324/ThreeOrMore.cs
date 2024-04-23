@@ -10,13 +10,18 @@ namespace CMP1903_A1_2324
     {
         public int Game()
         {
-            List<int> list = new List<int>();
+            List<int> dicerolls = new List<int>();
             //Die die = new Die();
            for (int i = 0; i >= 5; i++)
             {
                 this.Roll();
-                list.Add(this.Dice_value);
+                dicerolls.Add(this.Dice_value);
             }
+           foreach (int i in dicerolls)
+            {
+                Console.WriteLine(dicerolls[i]);
+            }
+           Console.WriteLine(); 
             return 0;
         }
 
