@@ -10,16 +10,16 @@ namespace CMP1903_A1_2324
 {
   internal class Game
   {
-    /*
-     * The Game class should create three die objects, roll them, sum and report the total of the three dice rolls.
-     *
-     * EXTRA: For extra requirements (these aren't required though), the dice rolls could be managed so that the
-     * rolls could be continous, and the totals and other statistics could be summarised for example.
-     */
-    //Methods
-    ///<summary> creates dice and then rolls the dice and gives statistics</summary>
-    ///<returns>returns total value and amount of rolls</returns>
-    public (int,int) Roll_dice()
+        /*
+         * The Game class should create three die objects, roll them, sum and report the total of the three dice rolls.
+         *
+         * EXTRA: For extra requirements (these aren't required though), the dice rolls could be managed so that the
+         * rolls could be continous, and the totals and other statistics could be summarised for example.
+         */
+        //Methods
+        ///<summary> creates dice and then rolls the dice and gives statistics</summary>
+        ///<returns>returns total value and amount of rolls</returns>
+        public (int,int) Roll_dice()
     {
       try
       {
@@ -51,7 +51,7 @@ namespace CMP1903_A1_2324
           //creates instance of dice
           Die Dice_1 = new Die();
           //calls ContinuousRoll and returns the array 
-          int[] diceValues = Dice_1.ContinuousRoll(Amount_rolls);
+          int[] diceValues = Dice_1.Roll(Amount_rolls);
           //gives array to Continuos_statistics and returns the total
           int Total = Continuos_statistics(diceValues);
           return (Total, Amount_rolls);
