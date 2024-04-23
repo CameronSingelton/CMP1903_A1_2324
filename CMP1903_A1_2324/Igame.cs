@@ -8,5 +8,6 @@ namespace CMP1903_A1_2324
 {
     internal interface Igame
     {
+        int Game();
     }
 }

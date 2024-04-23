@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    internal class SevensOut:Die,Igame
+    internal interface Irollable
     {
-        public int Game()
-        {
-
-            return 0;
-        }
+        void Roll();
     }
 }

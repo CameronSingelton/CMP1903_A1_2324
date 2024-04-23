@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Die.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Igame.cs" />
+    <Compile Include="Irollable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SevensOut.cs" />
