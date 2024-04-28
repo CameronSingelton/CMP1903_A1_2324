@@ -1,4 +1,4 @@
-﻿//#define test
+﻿#define test
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +33,7 @@ namespace CMP1903_A1_2324
                 //calls game method of Rolls_dice
                 game.Roll_dice();
             }
+#endif
         }
     }
 }
-#endif 

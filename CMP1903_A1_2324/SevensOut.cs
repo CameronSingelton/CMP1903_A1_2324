@@ -7,39 +7,60 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    internal class SevensOut:Igame
+    internal class SevensOut:Die,Igame
     {
+        private int _totalvalue = 0;
+        private int _Dice_value1 = 0;
+        private int _Dice_value2 = 0;
+        private int _End_value =0;
+        public int totalvalue
+        {
+            get { return _totalvalue; }
+            set { _totalvalue = value; }
+        }
+        public int dice_value1
+        {
+            get { return _Dice_value1; }
+            set {  _Dice_value1= value; }
+        }
+        public int dice_value2
+        {
+            get { return _Dice_value2; }
+            set { _Dice_value2 = value; }
+        }
+        public int end_value
+        {
+            get { return _End_value; }
+            set { _End_value = value; }
+        }
         public int Game()
         {
-            int totalvalue = 0;
-            Die Die1 = new Die();
-            Die Die2 = new Die();
-            while (Die1.Dice_value + Die2.Dice_value != 7)
+            
+            while (_Dice_value1 + _Dice_value2 != 7)
             {
-                Die1.Roll();
+                this.Roll();
+                _Dice_value1 = this.Dice_value;
                 Thread.Sleep(1);  
-                Die2.Roll();
+                this.Roll();
+                _Dice_value2 = this.Dice_value;
                 Thread.Sleep(1);
-                Console.WriteLine(Die1.Dice_value);
-                Console.WriteLine(Die2.Dice_value+"\n");
-                if ((Die1.Dice_value + Die2.Dice_value) == 7)
+                if (( _Dice_value1 +  _Dice_value2) == 7)
                 {
+                    end_value = (_Dice_value1 + _Dice_value2); 
                     break;
                 }
-                else if (Die1.Dice_value == Die2.Dice_value)
+                else if ( _Dice_value1 ==  _Dice_value2)
                 {
-                    totalvalue += (Die1.Dice_value+Die2.Dice_value)*2;
-                    Console.WriteLine((Die1.Dice_value + Die2.Dice_value)*2 + "\n");
+                    this._totalvalue += ( _Dice_value1+ _Dice_value2)*2;
                     continue;
                 }
                 else
                 {
-                    totalvalue += Die1.Dice_value + Die2.Dice_value;
-                    Console.WriteLine((Die1.Dice_value + Die2.Dice_value) + "\n"); ;
+                    this._totalvalue +=  _Dice_value1 +  _Dice_value2;
                     continue; 
                 }
             }
-            return totalvalue;
+            return this._totalvalue;
         }
     }
 }

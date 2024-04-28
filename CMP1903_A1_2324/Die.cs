@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace CMP1903_A1_2324
 {
-  internal class Die:Irollable
+  internal abstract class Die:Irollable
   {
     /*
      * The Die class should contain one property to hold the current die value,
@@ -14,8 +14,8 @@ namespace CMP1903_A1_2324
      */
     //Property
     //creating Propertys to hold dice value and create the array
-    private int _diceValue = 0;
-    private int[] _diceValues = {0, 0, 0, 0, 0, 0, 0 };
+    protected int _diceValue = 0;
+
     
     //getter and setter for _diceValue
     /// <summary>getter and setter for _diceValue</summary>
@@ -26,7 +26,7 @@ namespace CMP1903_A1_2324
     }
     //Method
     ///<summary> makes a random number from 1 to 6 </summary>
-    public void Roll()
+    public virtual void Roll()
     {
       //creates instance of random
       Random _Random = new Random();

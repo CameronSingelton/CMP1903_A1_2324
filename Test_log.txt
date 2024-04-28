@@ -1,0 +1,30 @@
+28/04/2024 19:23:53
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+28/04/2024 19:24:30
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+28/04/2024 19:24:50
+dice number under 6 test = passed
+dice number over 1 test = failed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+28/04/2024 19:26:17
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+28/04/2024 19:27:21
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+28/04/2024 19:29:38
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
