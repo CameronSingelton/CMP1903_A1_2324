@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    internal class player
+    internal class Player
     {
-        private int _wins = 0;
+        private Double _wins = 0;
 
-        public int Wins
+        public Double Wins
         { 
             get { return _wins; } 
             set { _wins = value; }

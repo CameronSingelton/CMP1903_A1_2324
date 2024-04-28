@@ -39,10 +39,11 @@ namespace CMP1903_A1_2324
             while (_Dice_value1 + _Dice_value2 != 7)
             {
                 this.Roll();
+                Thread.Sleep(1);
                 _Dice_value1 = this.Die_value;
-                Thread.Sleep(1);  
                 this.Roll();
                 _Dice_value2 = this.Die_value;
+                Console.WriteLine($"die 1 = {_Dice_value1}\ndie 2 = {_Dice_value2}");
                 Thread.Sleep(1);
                 if (( _Dice_value1 +  _Dice_value2) == 7)
                 {

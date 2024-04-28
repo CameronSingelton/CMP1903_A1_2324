@@ -17,25 +17,25 @@ namespace CMP1903_A1_2324
         private string _play_again = " ";
         private int _P1totalscore = 0;
         private int _P2totalscore = 0;
-        private int _played_games = 0;
+        private Double _played_games = 0;
         private int _P1_7out_HS = 0;
         private int _P2_7out_HS = 0;
         private int _P1_TM_HS = 0;
         private int _P2_TM_HS = 0;
-        player P1 = new player();
-        player P2 = new player();
+        Player P1 = new Player();
+        Player P2 = new Player();
         ///<summary> creates dice and then rolls the dice and gives statistics</summary>
         ///<returns>returns total value and amount of rolls</returns>
         public void Roll_dice()
         {
             try
             {
+                Console.WriteLine("Do you want to play with a computer(c) or another player(p)(on the same macine)");
+                string comp = Console.ReadLine().ToLower();
                 while (_Play_game == true)
                 {
                     _P1totalscore = 0;
                     _P2totalscore = 0;
-                    Console.WriteLine("Do you want to play with a computer(c) or another player(p)(on the same macine)");
-                    string comp = Console.ReadLine().ToLower();
                     Console.WriteLine("what game do you want to play Sevenout(7out) or Three or More(TM)");
                     string game = Console.ReadLine().ToLower();
                     _played_games++;
@@ -99,12 +99,14 @@ namespace CMP1903_A1_2324
         ///<returns>total value of all dice</returns>
         public void statistics()
         {
+            //Double P1Wins = P1.Wins;
+           // Double P2Wins = P2.Wins;
             Console.WriteLine("played " + _played_games);
             P1.Print_wins();
-            Console.WriteLine($"P1 percnetage win = {((P1.Wins / _played_games) * 100)}");
+            Console.WriteLine($"P1 percnetage win = {((P1.Wins / _played_games) * 100)}%");
             Console.WriteLine($"Player1 sevenout highscore = {_P1_7out_HS}\nPlayer1 three or more highscore = {_P1_TM_HS}");
             P2.Print_wins();
-            Console.WriteLine($"Player1 percentage win =  {((P2.Wins / _played_games) * 100)}");
+            Console.WriteLine($"Player1 percentage win =  {((P2.Wins / _played_games) * 100)}%");
             Console.WriteLine($"Player1 sevenout highscore = {_P2_7out_HS}\nPlayer1 three or more highscore = {_P2_TM_HS}");
         }
         public void Wins()
