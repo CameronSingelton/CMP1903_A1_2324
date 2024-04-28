@@ -11,17 +11,22 @@ using System.Xml.Schema;
 
 namespace CMP1903_A1_2324
 {
-  internal class Game
-  {
+    internal class Game
+    {
         private bool _Play_game = true;
         private string _play_again = " ";
         private int _P1totalscore = 0;
         private int _P2totalscore = 0;
+        private int _played_games = 0;
+        private int _P1_7out_HS = 0;
+        private int _P2_7out_HS = 0;
+        private int _P1_TM_HS = 0;
+        private int _P2_TM_HS = 0;
         player P1 = new player();
         player P2 = new player();
         ///<summary> creates dice and then rolls the dice and gives statistics</summary>
         ///<returns>returns total value and amount of rolls</returns>
-        public (int,int) Roll_dice()
+        public void Roll_dice()
         {
             try
             {
@@ -33,8 +38,21 @@ namespace CMP1903_A1_2324
                     string comp = Console.ReadLine().ToLower();
                     Console.WriteLine("what game do you want to play Sevenout(7out) or Three or More(TM)");
                     string game = Console.ReadLine().ToLower();
+                    _played_games++;
                     Console.WriteLine(game);
-                    if (game == "tm" || game == "three or more")
+                    if (game == "7out" || game == "sevenout")
+                    {
+                        SevensOut P1sevensOut = new SevensOut();
+                        SevensOut P2sevensOut = new SevensOut();
+                        _P1totalscore = P1sevensOut.Game();
+                        _P2totalscore = P2sevensOut.Game();
+                        Console.WriteLine("P1 score = " + _P1totalscore + "\nP2 score = " + _P2totalscore);
+                        High_scores(1);
+                        Wins();
+                        Play_again();
+                        continue;
+                    }
+                    else if (game == "tm" || game == "three or more")
                     {
                         ThreeOrMore P1threeOrMore = new ThreeOrMore();
                         ThreeOrMore P2threeOrMore = new ThreeOrMore();
@@ -42,7 +60,7 @@ namespace CMP1903_A1_2324
                         {
                             Console.WriteLine("Player 1 turn");
                             _P1totalscore = P1threeOrMore.Game(true);
-                            if (comp =="c" || comp == "computer")
+                            if (comp == "c" || comp == "computer")
                             {
                                 Console.WriteLine("Player 2 turn");
                                 _P2totalscore = P2threeOrMore.Game(true);
@@ -54,17 +72,7 @@ namespace CMP1903_A1_2324
                             }
                             Console.WriteLine("P1 score = " + _P1totalscore + "\nP2 score = " + _P2totalscore);
                         }
-                        Wins();
-                        Play_again();
-                        continue;
-                    }
-                    else if (game == "7out" || game == "sevenout")
-                    {
-                        SevensOut P1sevensOut = new SevensOut();
-                        SevensOut P2sevensOut = new SevensOut();
-                        _P1totalscore = P1sevensOut.Game();
-                        _P2totalscore = P2sevensOut.Game();
-                        Console.WriteLine("P1 score = " + _P1totalscore+"\nP2 score = " + _P2totalscore);
+                        High_scores(2);
                         Wins();
                         Play_again();
                         continue;
@@ -74,33 +82,32 @@ namespace CMP1903_A1_2324
                         throw new ArgumentException();
                     }
                 }
-                Console.WriteLine("P1 Wins = " + P1.Wins + "\nP2 wins = " + P2.Wins);
-                return (0, 0);
-
-                
+                statistics();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 Console.WriteLine("try again");
                 Roll_dice();
-                return (0, 0);
             }
 
         }
-    ///<summary> takes dice values and outputs statistics </summary>
-    ///<param name="Dice_Value_1">contains first dice value</param>
-    ///<param name="Dice_Value_2">contains second dice value</param>
-    ///<param name="Dice_Value_3">contains third dice value</param>
-    ///<returns>total value of all dice</returns>
-    public int statistics(int Dice_Value_1, int Dice_Value_2, int Dice_Value_3)
-    {
-      //adds dice values together
-      int totalValue = Dice_Value_1 + Dice_Value_2 + Dice_Value_3;
-      Console.WriteLine($"1={Dice_Value_1}\n2={Dice_Value_2}\n3={Dice_Value_3}\ntotal={totalValue}");
-      return totalValue;
-    }
-    public void Wins()
+        ///<summary> takes dice values and outputs statistics </summary>
+        ///<param name="Dice_Value_1">contains first dice value</param>
+        ///<param name="Dice_Value_2">contains second dice value</param>
+        ///<param name="Dice_Value_3">contains third dice value</param>
+        ///<returns>total value of all dice</returns>
+        public void statistics()
+        {
+            Console.WriteLine("played " + _played_games);
+            P1.Print_wins();
+            Console.WriteLine($"P1 percnetage win = {((P1.Wins / _played_games) * 100)}");
+            Console.WriteLine($"Player1 sevenout highscore = {_P1_7out_HS}\nPlayer1 three or more highscore = {_P1_TM_HS}");
+            P2.Print_wins();
+            Console.WriteLine($"Player1 percentage win =  {((P2.Wins / _played_games) * 100)}");
+            Console.WriteLine($"Player1 sevenout highscore = {_P2_7out_HS}\nPlayer1 three or more highscore = {_P2_TM_HS}");
+        }
+        public void Wins()
         {
             if (_P1totalscore > _P2totalscore)
             {
@@ -124,7 +131,7 @@ namespace CMP1903_A1_2324
             }
         }
 
-    public void Play_again()
+        public void Play_again()
         {
             Console.WriteLine("do you want to play another game?: ");
             _play_again = Console.ReadLine().ToLower();
@@ -141,5 +148,30 @@ namespace CMP1903_A1_2324
                 throw new ArgumentException();
             }
         }
-  }
+        public void High_scores(int game)
+        { if (game == 1)
+            {
+                if (_P1totalscore > _P1_7out_HS)
+                {
+                    _P1_7out_HS = _P1totalscore;
+                }
+                else if (_P2totalscore > _P2_7out_HS)
+                {
+                    _P2_7out_HS = _P2totalscore;
+                }
+            }
+            else if (game == 2)
+            {
+                if (_P1totalscore > _P1_TM_HS)
+                {
+                    _P1_TM_HS = _P1totalscore;
+                }
+                else if (_P2totalscore > _P2_TM_HS)
+                {
+                    _P2_TM_HS = _P2totalscore;
+                }
+            }
+
+        }
+    }
 }

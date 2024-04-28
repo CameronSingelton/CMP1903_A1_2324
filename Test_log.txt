@@ -10,7 +10,7 @@ sevenout game ended when number = 7 test = passed
 sevenout game ended when number = 7 test = passed
 28/04/2024 19:24:50
 dice number under 6 test = passed
-dice number over 1 test = failed
+dice number over 1 test = failed //if statment for testing had wrong operator
 sevenout game ended when number = 7 test = passed
 sevenout game ended when number = 7 test = passed
 28/04/2024 19:26:17
@@ -24,6 +24,21 @@ dice number over 1 test = passed
 sevenout game ended when number = 7 test = passed
 sevenout game ended when number = 7 test = passed
 28/04/2024 19:29:38
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+28/04/2024 19:58:50
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+28/04/2024 20:09:02
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+28/04/2024 20:10:08
 dice number under 6 test = passed
 dice number over 1 test = passed
 sevenout game ended when number = 7 test = passed

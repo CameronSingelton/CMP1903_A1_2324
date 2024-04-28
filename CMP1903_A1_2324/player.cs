@@ -14,9 +14,12 @@ namespace CMP1903_A1_2324
         { 
             get { return _wins; } 
             set { _wins = value; }
-        }   
-      
+        }
 
+        public void Print_wins()
+        {
+            Console.WriteLine(this + "wins= " + Wins);
+        }   
 
     }
 }

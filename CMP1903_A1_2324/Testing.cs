@@ -54,12 +54,12 @@ namespace CMP1903_A1_2324
         }
         //calls game method Roll_dice and returns total of dice and amount of rolls 
         this.Roll();
-            Console.WriteLine(this._diceValue);
+            Console.WriteLine(this._die_Value);
         //checks if the values are with in the paramiters
         DateTime localDate = DateTime.Now;
         fw.WriteLine(localDate);
-        Debug.Assert(this.Dice_value <= 6, "number is over 6");
-        if (this.Dice_value <=6)
+        Debug.Assert(this.Die_value <= 6, "number is over 6");
+        if (this.Die_value <=6)
         {
             fw.WriteLine("dice number under 6 test = passed");
 
@@ -69,8 +69,8 @@ namespace CMP1903_A1_2324
             fw.WriteLine("dice number under 6 test = failed");
         }
             
-        Debug.Assert(this.Dice_value >= 1, "number is less than 1");
-        if (this.Dice_value >= 1)
+        Debug.Assert(this.Die_value >= 1, "number is less than 1");
+        if (this.Die_value >= 1)
         {
             fw.WriteLine("dice number over 1 test = passed");
 

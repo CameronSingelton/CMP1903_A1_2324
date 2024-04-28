@@ -166,8 +166,8 @@ namespace CMP1903_A1_2324
 
                 base.Roll();
                 Thread.Sleep(1);
-                _die_values.Add(this.Dice_value);
-                _die_counts[this.Dice_value] = _die_counts[this.Dice_value]+1;
+                _die_values.Add(this.Die_value);
+                _die_counts[this.Die_value] = _die_counts[this.Die_value]+1;
                 i++;
             }
             _die_values.Sort();
