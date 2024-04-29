@@ -30,26 +30,32 @@ namespace CMP1903_A1_2324
         {
             try
             {
-                Console.WriteLine("Do you want to play with a computer(c) or another player(p)(on the same macine)");
+                Console.WriteLine("Do you want to play with a computer(c) or another player(p)(on the same machine)");
                 string comp = Console.ReadLine().ToLower();
+                if (comp!="c"&& comp != "computer" && comp != "p" && comp != "player")
+                {
+                    throw new ArgumentException("Please enter computer or c or p or player");
+                }
                 while (_Play_game == true)
                 {
                     _P1totalscore = 0;
                     _P2totalscore = 0;
                     Console.WriteLine("what game do you want to play Sevenout(7out) or Three or More(TM)");
                     string game = Console.ReadLine().ToLower();
-                    _played_games++;
                     Console.WriteLine(game);
                     if (game == "7out" || game == "sevenout")
                     {
                         SevensOut P1sevensOut = new SevensOut();
                         SevensOut P2sevensOut = new SevensOut();
+                        Console.WriteLine("Player 1 turn");
                         _P1totalscore = P1sevensOut.Game();
+                        Console.WriteLine("Player 2 turn");
                         _P2totalscore = P2sevensOut.Game();
                         Console.WriteLine("P1 score = " + _P1totalscore + "\nP2 score = " + _P2totalscore);
                         High_scores(1);
                         Wins();
                         Play_again();
+                        _played_games++;
                         continue;
                     }
                     else if (game == "tm" || game == "three or more")
@@ -59,7 +65,7 @@ namespace CMP1903_A1_2324
                         while ((_P1totalscore < 20) && (_P2totalscore < 20))
                         {
                             Console.WriteLine("Player 1 turn");
-                            _P1totalscore = P1threeOrMore.Game(true);
+                            _P1totalscore = P1threeOrMore.Game();
                             if (comp == "c" || comp == "computer")
                             {
                                 Console.WriteLine("Player 2 turn");
@@ -75,11 +81,12 @@ namespace CMP1903_A1_2324
                         High_scores(2);
                         Wins();
                         Play_again();
+                        _played_games++;
                         continue;
                     }
                     else
                     {
-                        throw new ArgumentException();
+                        throw new ArgumentException("please enter sevenout or 7out or or three or more or tm");
                     }
                 }
                 statistics();
@@ -93,21 +100,18 @@ namespace CMP1903_A1_2324
 
         }
         ///<summary> takes dice values and outputs statistics </summary>
-        ///<param name="Dice_Value_1">contains first dice value</param>
-        ///<param name="Dice_Value_2">contains second dice value</param>
-        ///<param name="Dice_Value_3">contains third dice value</param>
-        ///<returns>total value of all dice</returns>
+
         public void statistics()
         {
-            //Double P1Wins = P1.Wins;
-           // Double P2Wins = P2.Wins;
             Console.WriteLine("played " + _played_games);
+            Console.Write("Player 1 ");
             P1.Print_wins();
-            Console.WriteLine($"P1 percnetage win = {((P1.Wins / _played_games) * 100)}%");
-            Console.WriteLine($"Player1 sevenout highscore = {_P1_7out_HS}\nPlayer1 three or more highscore = {_P1_TM_HS}");
+            Console.WriteLine($"Player 1 percentage win rate = {((P1.Wins / _played_games) * 100)}%");
+            Console.WriteLine($"Player 1 sevenout highscore = {_P1_7out_HS}\nPlayer1 three or more highscore = {_P1_TM_HS}");
+            Console.Write("Player 2 ");
             P2.Print_wins();
-            Console.WriteLine($"Player1 percentage win =  {((P2.Wins / _played_games) * 100)}%");
-            Console.WriteLine($"Player1 sevenout highscore = {_P2_7out_HS}\nPlayer1 three or more highscore = {_P2_TM_HS}");
+            Console.WriteLine($"Player 2 percentage win rate =  {((P2.Wins / _played_games) * 100)}%");
+            Console.WriteLine($"Player 2 sevenout highscore = {_P2_7out_HS}\nPlayer1 three or more highscore = {_P2_TM_HS}");
         }
         public void Wins()
         {
@@ -147,7 +151,7 @@ namespace CMP1903_A1_2324
             }
             else
             {
-                throw new ArgumentException();
+                throw new ArgumentException("enter y or yes or n or no");
             }
         }
         public void High_scores(int game)
@@ -157,7 +161,7 @@ namespace CMP1903_A1_2324
                 {
                     _P1_7out_HS = _P1totalscore;
                 }
-                else if (_P2totalscore > _P2_7out_HS)
+                if (_P2totalscore > _P2_7out_HS)
                 {
                     _P2_7out_HS = _P2totalscore;
                 }
@@ -168,7 +172,7 @@ namespace CMP1903_A1_2324
                 {
                     _P1_TM_HS = _P1totalscore;
                 }
-                else if (_P2totalscore > _P2_TM_HS)
+                if (_P2totalscore > _P2_TM_HS)
                 {
                     _P2_TM_HS = _P2totalscore;
                 }

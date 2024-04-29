@@ -59,17 +59,28 @@ namespace CMP1903_A1_2324
                     _roll_count = 5;
                     Console.WriteLine("what number do you want to keep");
                     int keep = int.Parse(Console.ReadLine());
-                    int keep_count = _die_counts[keep];
-                    Array.Clear(_die_counts, 0, _die_counts.Length);
-                    _die_values.Clear();
-                    for (int i = 0; i < keep_count; i++)
+                    if (keep >= 1 && keep <=6)
                     {
-                        _die_values.Add(keep);
-                        _die_counts[keep] = _die_counts[keep] + 1;
+                        int keep_count = _die_counts[keep];
+                        Array.Clear(_die_counts, 0, _die_counts.Length);
+                        _die_values.Clear();
+                        for (int i = 0; i < keep_count; i++)
+                        {
+                            _die_values.Add(keep);
+                            _die_counts[keep] = _die_counts[keep] + 1;
+                        }
+                        roll_count = roll_count - keep_count;
+                        Roll();
+                        continue;
                     }
-                    roll_count = roll_count - keep_count;
-                    Roll();
-                    continue;
+                    else
+                    {
+                        throw new ArgumentException("please enter a number from 1 to 6 ");
+                    }
+                }
+                else
+                {
+                    throw new ArgumentException("please enter all or a or remaining or r ");
                 }
                 
             }

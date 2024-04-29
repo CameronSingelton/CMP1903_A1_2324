@@ -35,6 +35,7 @@ namespace CMP1903_A1_2324
         }
         public int Game()
         {
+            Console.WriteLine("Roll the two dice, noting the total rolled each time.\nIf it is a 7 - stop.\nIf it is any other number - add it to your total.\nIf it is a double - add double the total to your score (3,3 would add 12 to your total)");
             
             while (_Dice_value1 + _Dice_value2 != 7)
             {
@@ -43,8 +44,8 @@ namespace CMP1903_A1_2324
                 _Dice_value1 = this.Die_value;
                 this.Roll();
                 _Dice_value2 = this.Die_value;
-                Console.WriteLine($"die 1 = {_Dice_value1}\ndie 2 = {_Dice_value2}");
                 Thread.Sleep(1);
+                Console.WriteLine($"die 1 = {_Dice_value1}\ndie 2 = {_Dice_value2}\ntotal = {(_Dice_value1+_Dice_value2)}\n");
                 if (( _Dice_value1 +  _Dice_value2) == 7)
                 {
                     end_value = (_Dice_value1 + _Dice_value2); 

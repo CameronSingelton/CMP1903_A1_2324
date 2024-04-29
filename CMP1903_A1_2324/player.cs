@@ -18,7 +18,7 @@ namespace CMP1903_A1_2324
 
         public void Print_wins()
         {
-            Console.WriteLine(this + "wins= " + Wins);
+            Console.WriteLine("wins= " + Wins);
         }   
 
     }
