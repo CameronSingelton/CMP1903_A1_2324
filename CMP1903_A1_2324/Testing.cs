@@ -99,6 +99,7 @@ namespace CMP1903_A1_2324
         {
             fw.WriteLine("sevenout game ended when number = 7 = Failed");
         }
+
          fw.Close();
     }
   }

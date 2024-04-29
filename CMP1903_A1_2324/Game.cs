@@ -22,83 +22,108 @@ namespace CMP1903_A1_2324
         private int _P2_7out_HS = 0;
         private int _P1_TM_HS = 0;
         private int _P2_TM_HS = 0;
+        private string _comp = " ";
+        private string _game = " ";
         Player P1 = new Player();
         Player P2 = new Player();
         ///<summary> creates dice and then rolls the dice and gives statistics</summary>
         ///<returns>returns total value and amount of rolls</returns>
         public void Roll_dice()
         {
-            try
-            {
-                Console.WriteLine("Do you want to play with a computer(c) or another player(p)(on the same machine)");
-                string comp = Console.ReadLine().ToLower();
-                if (comp!="c"&& comp != "computer" && comp != "p" && comp != "player")
-                {
-                    throw new ArgumentException("Please enter computer or c or p or player");
-                }
-                while (_Play_game == true)
-                {
-                    _P1totalscore = 0;
-                    _P2totalscore = 0;
-                    Console.WriteLine("what game do you want to play Sevenout(7out) or Three or More(TM)");
-                    string game = Console.ReadLine().ToLower();
-                    Console.WriteLine(game);
-                    if (game == "7out" || game == "sevenout")
-                    {
-                        SevensOut P1sevensOut = new SevensOut();
-                        SevensOut P2sevensOut = new SevensOut();
-                        Console.WriteLine("Player 1 turn");
-                        _P1totalscore = P1sevensOut.Game();
-                        Console.WriteLine("Player 2 turn");
-                        _P2totalscore = P2sevensOut.Game();
-                        Console.WriteLine("P1 score = " + _P1totalscore + "\nP2 score = " + _P2totalscore);
-                        High_scores(1);
-                        Wins();
-                        Play_again();
-                        _played_games++;
-                        continue;
-                    }
-                    else if (game == "tm" || game == "three or more")
-                    {
-                        ThreeOrMore P1threeOrMore = new ThreeOrMore();
-                        ThreeOrMore P2threeOrMore = new ThreeOrMore();
-                        while ((_P1totalscore < 20) && (_P2totalscore < 20))
-                        {
-                            Console.WriteLine("Player 1 turn");
-                            _P1totalscore = P1threeOrMore.Game();
-                            if (comp == "c" || comp == "computer")
-                            {
-                                Console.WriteLine("Player 2 turn");
-                                _P2totalscore = P2threeOrMore.Game(true);
-                            }
-                            else
-                            {
-                                Console.WriteLine("Player 2 turn");
-                                _P2totalscore = P2threeOrMore.Game();
-                            }
-                            Console.WriteLine("P1 score = " + _P1totalscore + "\nP2 score = " + _P2totalscore);
-                        }
-                        High_scores(2);
-                        Wins();
-                        Play_again();
-                        _played_games++;
-                        continue;
-                    }
-                    else
-                    {
-                        throw new ArgumentException("please enter sevenout or 7out or or three or more or tm");
-                    }
-                }
-                statistics();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                Console.WriteLine("try again");
-                Roll_dice();
-            }
 
+
+            while (_Play_game == true)
+            {
+                _P1totalscore = 0;
+                _P2totalscore = 0;
+                while (true)
+                {
+                    try
+                    {
+                        Console.WriteLine("what game do you want to play Sevenout(7out) or Three or More(TM)");
+                        _game = Console.ReadLine().ToLower();
+                        if (_game == "7out" || _game == "sevenout")
+                        {
+                            SevensOut P1sevensOut = new SevensOut();
+                            SevensOut P2sevensOut = new SevensOut();
+                            Console.WriteLine("Player 1 turn");
+                            _P1totalscore = P1sevensOut.Game();
+                            Console.WriteLine("Player 2 turn");
+                            _P2totalscore = P2sevensOut.Game();
+                            Console.WriteLine("P1 score = " + _P1totalscore + "\nP2 score = " + _P2totalscore);
+                            High_scores(1);
+                            Wins();
+                            Play_again();
+                            _played_games++;
+                            break;
+                        }
+                        else if (_game == "tm" || _game == "three or more")
+                        {
+                            while (true)
+                            {
+                                try
+                                {
+                                    Console.WriteLine("Do you want to play with a computer(c) or another player(p)(on the same machine)");
+                                    _comp = Console.ReadLine().ToLower();
+                                    if (_comp != "c" && _comp != "computer" && _comp != "p" && _comp != "player")
+                                    {
+                                        throw new ArgumentException("Please enter computer or c or p or player");
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.ToString());
+
+                                }
+                            }
+
+                            ThreeOrMore P1threeOrMore = new ThreeOrMore();
+                            ThreeOrMore P2threeOrMore = new ThreeOrMore();
+                            while ((_P1totalscore < 20) && (_P2totalscore < 20))
+                            {
+                                Console.WriteLine("Player 1 turn");
+                                _P1totalscore = P1threeOrMore.Game(true);
+                                if (_comp == "c" || _comp == "computer")
+                                {
+                                    Console.WriteLine("Player 2 turn");
+                                    _P2totalscore = P2threeOrMore.Game(true);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Player 2 turn");
+                                    _P2totalscore = P2threeOrMore.Game();
+                                }
+                                Console.WriteLine("P1 score = " + _P1totalscore + "\nP2 score = " + _P2totalscore);
+                            }
+                            High_scores(2);
+                            Wins();
+                            Play_again();
+                            _played_games++;
+                            break;
+                        }
+                        else
+                        {
+                            throw new ArgumentException("please enter sevenout or 7out or or three or more or tm");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+
+                    }
+                }
+            }
+            statistics();
         }
+
+
+
+
+
         ///<summary> takes dice values and outputs statistics </summary>
 
         public void statistics()
@@ -111,7 +136,7 @@ namespace CMP1903_A1_2324
             Console.Write("Player 2 ");
             P2.Print_wins();
             Console.WriteLine($"Player 2 percentage win rate =  {((P2.Wins / _played_games) * 100)}%");
-            Console.WriteLine($"Player 2 sevenout highscore = {_P2_7out_HS}\nPlayer1 three or more highscore = {_P2_TM_HS}");
+            Console.WriteLine($"Player 2 sevenout highscore = {_P2_7out_HS}\nPlayer 2 three or more highscore = {_P2_TM_HS}");
         }
         public void Wins()
         {
@@ -139,23 +164,38 @@ namespace CMP1903_A1_2324
 
         public void Play_again()
         {
-            Console.WriteLine("do you want to play another game?: ");
-            _play_again = Console.ReadLine().ToLower();
-            if (_play_again == "y" || _play_again == "yes")
+            while (true)
             {
-                _Play_game = true;
-            }
-            else if (_play_again == "n" || _play_again == "no")
-            {
-                _Play_game = false;
-            }
-            else
-            {
-                throw new ArgumentException("enter y or yes or n or no");
+                try
+                {
+                    Console.WriteLine("do you want to play another game?: ");
+                    _play_again = Console.ReadLine().ToLower();
+                    if (_play_again == "y" || _play_again == "yes")
+                    {
+                        _Play_game = true;
+                        break;
+                    }
+                    else if (_play_again == "n" || _play_again == "no")
+                    {
+                        _Play_game = false;
+                        break;
+                    }
+                    else
+                    {
+                        throw new ArgumentException("enter y or yes or n or no");
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+
+                }
             }
         }
         public void High_scores(int game)
-        { if (game == 1)
+        {
+            if (game == 1)
             {
                 if (_P1totalscore > _P1_7out_HS)
                 {
@@ -177,7 +217,6 @@ namespace CMP1903_A1_2324
                     _P2_TM_HS = _P2totalscore;
                 }
             }
-
         }
     }
 }

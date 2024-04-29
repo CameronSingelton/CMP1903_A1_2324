@@ -14,6 +14,7 @@ namespace CMP1903_A1_2324
         private List<int> _die_values = new List<int> { };
         private int _totalscore = 0;
         private int _roll_count = 5;
+        private string _reroll = " ";
         public int[] die_counts
         {
             get { return _die_counts; }
@@ -42,45 +43,67 @@ namespace CMP1903_A1_2324
             Roll();
             while (_die_counts.Contains(2) && _die_counts.Max() == 2)
             {
-                
-                Console.WriteLine("do you want to reroll all the dice or reroll remaining");
-                string reroll = Console.ReadLine();
-                if (reroll == "all" || reroll == "a")
+                while (true)
                 {
-                    _roll_count = 5;
-                    Array.Clear(_die_counts, 0, _die_counts.Length);
-                    _die_values.Clear();
-                    Roll();
-                    continue;
+                    try
+                    {
+                        Console.WriteLine("do you want to _reroll all (a) the dice or _reroll remaining (r)");
+                        _reroll = Console.ReadLine();
 
-                }
-                else if (reroll == "remaining" || reroll == "r")
-                {
-                    _roll_count = 5;
-                    Console.WriteLine("what number do you want to keep");
-                    int keep = int.Parse(Console.ReadLine());
-                    if (keep >= 1 && keep <=6)
-                    {
-                        int keep_count = _die_counts[keep];
-                        Array.Clear(_die_counts, 0, _die_counts.Length);
-                        _die_values.Clear();
-                        for (int i = 0; i < keep_count; i++)
+
+                        if (_reroll == "all" || _reroll == "a")
                         {
-                            _die_values.Add(keep);
-                            _die_counts[keep] = _die_counts[keep] + 1;
+                            _roll_count = 5;
+                            Array.Clear(_die_counts, 0, _die_counts.Length);
+                            _die_values.Clear();
+                            Roll();
+                            break;
+
                         }
-                        roll_count = roll_count - keep_count;
-                        Roll();
-                        continue;
+                        else if (_reroll == "remaining" || _reroll == "r")
+                        {
+                            _roll_count = 5;
+                            while (true)
+                            {
+                                try
+                                {
+                                    Console.WriteLine("what number do you want to keep");
+                                    int keep = int.Parse(Console.ReadLine());
+                                    if (_die_values.Contains(keep))
+                                    {
+                                        int keep_count = _die_counts[keep];
+                                        Array.Clear(_die_counts, 0, _die_counts.Length);
+                                        _die_values.Clear();
+                                        for (int i = 0; i < keep_count; i++)
+                                        {
+                                            _die_values.Add(keep);
+                                            _die_counts[keep] = _die_counts[keep] + 1;
+                                        }
+                                        roll_count = roll_count - keep_count;
+                                        Roll();
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        throw new ArgumentException("please enter a number from the list");
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.ToString());
+                                }
+                            }
+                        }
+                        else
+                        {
+                            throw new ArgumentException("please enter all or a or remaining or r ");
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        throw new ArgumentException("please enter a number from 1 to 6 ");
+                        Console.WriteLine(ex.ToString());
                     }
-                }
-                else
-                {
-                    throw new ArgumentException("please enter all or a or remaining or r ");
+
                 }
                 
             }
