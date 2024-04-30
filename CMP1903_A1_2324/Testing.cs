@@ -9,8 +9,8 @@ using System.IO;
 
 namespace CMP1903_A1_2324
 {
-  internal class Testing:Die
-  {
+    internal class Testing : Die
+    {
         /*
          * This class should test the Game and the Die class.
          * Create a Game object, call the methods and compare their output to expected output.
@@ -20,98 +20,147 @@ namespace CMP1903_A1_2324
 
         //Method
         ///<summary>tests values to make sure they are within parameters </summary>
-    public void Test()
-    {
-
-            List<string> lines= new List<string>();
+        public void Test()
+        {
+            //to read file
             StreamReader fr = new StreamReader("C:\\Users\\camer\\OneDrive\\Documents\\GitHub\\CMP1903_A1_2324\\Test_log.txt");
+            //creates instace of 7out
+            SevensOut sevensOut = new SevensOut();
+            //creates instance of three or more
+            ThreeOrMore threeOrMore = new ThreeOrMore();
+            //list to store the lines from the file
+            List<string> lines = new List<string>();
+            //count for the line that needs to be printed
+            int x = 0;
+            //to store total value for testing
+            int totalscore = 0;
             //Reads the first line in the file
             var line = fr.ReadLine();
             //Continue to read until you reach end of file
             while (line != null)
             {
-                //write the line to console window
+                //adds line ot lines list
                 lines.Add(line);
                 //Reads the next line
                 line = fr.ReadLine();
             }
+            //closes file reading
             fr.Close();
+            //to write to file
             StreamWriter fw = new StreamWriter("C:\\Users\\camer\\OneDrive\\Documents\\GitHub\\CMP1903_A1_2324\\Test_log.txt");
-            int x = 0;
+            //
             foreach (string i in lines)
             {
                 fw.WriteLine(lines[x]);
-                x = x + 1;
+                x++;
             }
-        Game game_test = new Game();
-        SevensOut sevensOut = new SevensOut();
-        sevensOut.Game(false);
-        ThreeOrMore threeOrMore = new ThreeOrMore();
-        int totalscore = 0;
-        while (totalscore < 20)
-        {
-            totalscore=threeOrMore.Game(true);
-        }
-        //calls game method Roll_dice and returns total of dice and amount of rolls 
-        this.Roll();
-        //checks if the values are with in the paramiters
-        DateTime localDate = DateTime.Now;
-        fw.WriteLine(localDate);
-        Debug.Assert(this.Die_value <= 6, "number is over 6");
-        if (this.Die_value <=6)
-        {
-            fw.WriteLine("dice number under 6 test = passed");
+            //runs 7out game
+            sevensOut.Game(false);
+            //will stop when totalscore >=20
+            while (totalscore < 20)
+            {
+                //runs three or more game
+                totalscore = threeOrMore.Game(true);
+            }
+            //calls game method Roll_dice and returns total of dice and amount of rolls 
+            this.Roll();
+            //gets current data and time
+            DateTime localDate = DateTime.Now;
+            //writes date and time into file
+            fw.WriteLine(localDate);
 
-        }
-        else
-        {
-            fw.WriteLine("dice number under 6 test = failed");
-        }
-            
-        Debug.Assert(this.Die_value >= 1, "number is less than 1");
-        if (this.Die_value >= 1)
-        {
-            fw.WriteLine("dice number over 1 test = passed");
+            //checks that die value is not over 6
+            Debug.Assert(this.Die_value <= 6, "number is over 6");
+            //checks that die value is not over 6
+            if (this.Die_value <= 6)
+            {
+                //writes test result to file
+                fw.WriteLine("dice number under 6 test = passed");
+                Console.WriteLine("dice number under 6 test = passed");
 
-        }
-        else
-        {
-            fw.WriteLine("dice number over 1 test = failed");
-        }
-        Console.WriteLine(sevensOut.dice_value1 + sevensOut.dice_value2);
-        Debug.Assert(sevensOut.dice_value1 + sevensOut.dice_value2 == 7, "sevenout game dice add incorrectly test ");
-        if (sevensOut.dice_value1 + sevensOut.dice_value2 == 7)
-        {
-            fw.WriteLine("sevenout game dice add correctly test = passed");
 
-        }
-        else
-        {
-            fw.WriteLine("sevenout game dice add correctly test  = 7 = failed");
-        }
-        Debug.Assert(sevensOut.end_value == 7, "last roll didn't end in 7");
-        if (sevensOut.end_value == 7)
-        {
-            fw.WriteLine("sevenout game ended when number = 7 test = passed");
+            }
+            else
+            {
+                //writes test result to file
+                fw.WriteLine("dice number under 6 test = failed");
+                Console.WriteLine("dice number under 6 test = failed");
 
-        }
-        else
-        {
-            fw.WriteLine("sevenout game ended when number = 7 = failed");
-        }
-        Debug.Assert(threeOrMore.totalscore >=20, "ended before score was 20 or over");
-        if (threeOrMore.totalscore >= 20)
-        {
-            fw.WriteLine("sevenout game ended when number = 7 test = passed");
+            }
+            //checks that die value is not lower 1
+            Debug.Assert(this.Die_value >= 1, "number is less than 1");
+            //checks that die value is not lower 1
+            if (this.Die_value >= 1)
+            {
+                //writes test result to file
+                fw.WriteLine("dice number over 1 test = passed");
+                Console.WriteLine("dice number over 1 test = passed");
 
-        }
-        else
-        {
-            fw.WriteLine("sevenout game ended when number = 7 = Failed");
-        }
 
-         fw.Close();
-        Console.WriteLine("all tests have been performed");
+            }
+            else
+            {
+                //writes test result to file
+                fw.WriteLine("dice number over 1 test = failed");
+                Console.WriteLine("dice number over 1 test = failed");
+
+            }
+            //checks that 7out dice values added up properly
+            Debug.Assert(sevensOut.dice_value1 + sevensOut.dice_value2 == 7, "sevenout game dice add incorrectly test ");
+            //checks that 7out dice values added up properly
+            if (sevensOut.dice_value1 + sevensOut.dice_value2 == 7)
+            {
+                //writes test result to file
+                fw.WriteLine("sevenout game dice add correctly test = passed");
+                Console.WriteLine("sevenout game dice add correctly test = passed");
+
+
+            }
+            else
+            {
+                //writes test result to file
+                fw.WriteLine("sevenout game dice add correctly test  = 7 = failed");
+                Console.WriteLine("sevenout game dice add correctly test = failed");
+            }
+            //checks that 7out ends when dice values added =7 
+            Debug.Assert(sevensOut.end_value == 7, "last roll didn't end in 7");
+            //checks that 7out ends when dice values added =7 
+            if (sevensOut.end_value == 7)
+            {
+                //writes test result to file
+                fw.WriteLine("sevenout game ended when number = 7 test = passed");
+                Console.WriteLine("sevenout game ended when number = 7 test = passed");
+
+
+            }
+            else
+            {
+                //writes test result to file
+                fw.WriteLine("sevenout game ended when number = 7 = failed");
+                Console.WriteLine("sevenout game ended when number = 7 test = failed");
+
+            }
+            //checks if when game ended total score was over or equal to 20
+            Debug.Assert(threeOrMore.totalscore >= 20, "ended before score was 20 or over");
+            //checks if when game ended total score was over or equal to 20
+            if (threeOrMore.totalscore >= 20)
+            {
+                //writes test result to file
+                fw.WriteLine("sevenout game ended when number = 7 test = passed");
+                Console.WriteLine("sevenout game ended when number = 7 test = passed");
+
+
+            }
+            else
+            {
+                //writes test result to file
+                fw.WriteLine("sevenout game ended when number = 7 = Failed");
+                Console.WriteLine("sevenout game ended when number = 7 test = failed");
+
+            }
+            //closees file writing
+            fw.Close();
+            Console.WriteLine("all tests have been performed");
+        }
     }
-  }
 }
