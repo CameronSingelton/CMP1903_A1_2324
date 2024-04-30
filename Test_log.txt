@@ -63,3 +63,31 @@ dice number under 6 test = passed
 dice number over 1 test = passed
 sevenout game ended when number = 7 test = passed
 sevenout game ended when number = 7 test = passed
+29/04/2024 20:29:39
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+29/04/2024 23:11:58
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+29/04/2024 23:21:17
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+29/04/2024 23:23:15
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed
+29/04/2024 23:25:13
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+sevenout game ended when number = 7 test = passed

@@ -22,17 +22,17 @@ namespace CMP1903_A1_2324
         ///<summary>tests values to make sure they are within parameters </summary>
     public void Test()
     {
+
             List<string> lines= new List<string>();
-        //creates instance of die and game 
             StreamReader fr = new StreamReader("C:\\Users\\camer\\OneDrive\\Documents\\GitHub\\CMP1903_A1_2324\\Test_log.txt");
-            //Read the first line of text
+            //Reads the first line in the file
             var line = fr.ReadLine();
             //Continue to read until you reach end of file
             while (line != null)
             {
                 //write the line to console window
                 lines.Add(line);
-                //Read the next line
+                //Reads the next line
                 line = fr.ReadLine();
             }
             fr.Close();
@@ -43,9 +43,9 @@ namespace CMP1903_A1_2324
                 fw.WriteLine(lines[x]);
                 x = x + 1;
             }
-            Game game = new Game();
+        Game game_test = new Game();
         SevensOut sevensOut = new SevensOut();
-        sevensOut.Game();
+        sevensOut.Game(false);
         ThreeOrMore threeOrMore = new ThreeOrMore();
         int totalscore = 0;
         while (totalscore < 20)
@@ -54,7 +54,6 @@ namespace CMP1903_A1_2324
         }
         //calls game method Roll_dice and returns total of dice and amount of rolls 
         this.Roll();
-            Console.WriteLine(this._die_Value);
         //checks if the values are with in the paramiters
         DateTime localDate = DateTime.Now;
         fw.WriteLine(localDate);
@@ -79,6 +78,17 @@ namespace CMP1903_A1_2324
         {
             fw.WriteLine("dice number over 1 test = failed");
         }
+        Console.WriteLine(sevensOut.dice_value1 + sevensOut.dice_value2);
+        Debug.Assert(sevensOut.dice_value1 + sevensOut.dice_value2 == 7, "sevenout game dice add incorrectly test ");
+        if (sevensOut.dice_value1 + sevensOut.dice_value2 == 7)
+        {
+            fw.WriteLine("sevenout game dice add correctly test = passed");
+
+        }
+        else
+        {
+            fw.WriteLine("sevenout game dice add correctly test  = 7 = failed");
+        }
         Debug.Assert(sevensOut.end_value == 7, "last roll didn't end in 7");
         if (sevensOut.end_value == 7)
         {
@@ -101,6 +111,7 @@ namespace CMP1903_A1_2324
         }
 
          fw.Close();
+        Console.WriteLine("all tests have been performed");
     }
   }
 }

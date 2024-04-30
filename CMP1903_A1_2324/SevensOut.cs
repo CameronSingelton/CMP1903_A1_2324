@@ -33,10 +33,8 @@ namespace CMP1903_A1_2324
             get { return _End_value; }
             set { _End_value = value; }
         }
-        public int Game()
-        {
-            Console.WriteLine("Roll the two dice, noting the total rolled each time.\nIf it is a 7 - stop.\nIf it is any other number - add it to your total.\nIf it is a double - add double the total to your score (3,3 would add 12 to your total)");
-            
+        public int Game(bool comp)
+        {            
             while (_Dice_value1 + _Dice_value2 != 7)
             {
                 this.Roll();

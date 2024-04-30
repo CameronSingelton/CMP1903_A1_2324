@@ -8,9 +8,9 @@ namespace CMP1903_A1_2324
 {
     internal class Player
     {
-        private Double _wins = 0;
+        private double _wins = 0;
 
-        public Double Wins
+        public double Wins
         { 
             get { return _wins; } 
             set { _wins = value; }
