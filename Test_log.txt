@@ -1,152 +1,72 @@
-28/04/2024 19:23:53
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-28/04/2024 19:24:30
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-28/04/2024 19:24:50
-dice number under 6 test = passed
-dice number over 1 test = failed //if statment for testing had wrong operator
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-28/04/2024 19:26:17
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-28/04/2024 19:27:21
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-28/04/2024 19:29:38
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-28/04/2024 19:58:50
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-28/04/2024 20:09:02
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-28/04/2024 20:10:08
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-29/04/2024 10:27:00
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-29/04/2024 11:19:26
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-29/04/2024 11:23:55
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-29/04/2024 11:26:18
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-29/04/2024 20:29:39
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-29/04/2024 23:11:58
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-29/04/2024 23:21:17
+01/05/2024 17:54:53
 dice number under 6 test = passed
 dice number over 1 test = passed
 sevenout game dice add correctly test = passed
 sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-29/04/2024 23:23:15
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game dice add correctly test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-29/04/2024 23:25:13
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game dice add correctly test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-30/04/2024 19:01:16
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game dice add correctly test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-30/04/2024 19:05:30
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game dice add correctly test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-30/04/2024 21:48:52
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game dice add correctly test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-30/04/2024 23:00:39
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game dice add correctly test = passed
-sevenout game ended when number = 7 test = passed
-sevenout game ended when number = 7 test = passed
-//forgot to change test message but logic was implemented
-01/05/2024 12:39:16
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game dice add correctly test = passed
-sevenout game ended when number = 7 test = passed
-three or more endes when players scoreis 20 or over test = passed
-three or more die count dosn't go over 5 test= Failed
-three or more die value dosn't contain more than 5 values test = passed
-//failed because used length instead of sum
-01/05/2024 12:40:31
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game dice add correctly test = passed
-sevenout game ended when number = 7 test = passed
-three or more endes when players scoreis 20 or over test = passed
-three or more die count dosn't go over 5 test= Failed
-three or more die value dosn't contain more than 5 values test = passed
-01/05/2024 12:45:28
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game dice add correctly test = passed
-sevenout game ended when number = 7 test = passed
-three or more endes when players scoreis 20 or over test = passed
-three or more die count dosn't go over 5 test= Failed
-three or more die value dosn't contain more than 5 values test= Failed
-//failed because swaped the logic
-01/05/2024 12:48:54
-dice number under 6 test = passed
-dice number over 1 test = passed
-sevenout game dice add correctly test = passed
-sevenout game ended when number = 7 test = passed
-three or more endes when players scoreis 20 or over test = passed
+three or more endes when players score is 20 or over test = passed
 three or more die count dosn't contain more than 5 counts test = passed
 three or more die value dosn't contain more than 5 values test = passed
+three or more  remaining die keept the values test = passed
+01/05/2024 17:56:36
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players score is 20 or over test = passed
+three or more die count dosn't contain more than 5 counts test = passed
+three or more die value dosn't contain more than 5 values test = passed
+three or more  remaining die keept the values test = passed
+01/05/2024 18:00:02
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players score is 20 or over test = passed
+three or more die count dosn't contain more than 5 counts test = passed
+three or more die value dosn't contain more than 5 values test = passed
+three or more  remaining die keept the values test = passed
+01/05/2024 18:01:22
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players score is 20 or over test = passed
+three or more die count dosn't contain more than 5 counts test = passed
+three or more die value dosn't contain more than 5 values test = passed
+three or more  remaining die keept the values test = passed
+01/05/2024 18:06:17
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players score is 20 or over test = passed
+three or more die count dosn't contain more than 5 counts test = passed
+three or more die value dosn't contain more than 5 values test = passed
+three or more  remaining die keept the values test = passed
+01/05/2024 18:08:48
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players score is 20 or over test = passed
+three or more die count dosn't contain more than 5 counts test = passed
+three or more die value dosn't contain more than 5 values test = passed
+three or more  remaining die kept the values test = passed
+01/05/2024 18:12:26
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players score is 20 or over test = passed
+three or more die count dosn't contain more than 5 counts test = passed
+three or more die value dosn't contain more than 5 values test = passed
+three or more  remaining die kept the values test = passed
+01/05/2024 18:14:02
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players score is 20 or over test = passed
+three or more die count dosn't contain more than 5 counts test = passed
+three or more die value dosn't contain more than 5 values test = passed
+three or more  remaining die kept the values test = passed

@@ -61,7 +61,8 @@ namespace CMP1903_A1_2324
             {
                 //calls method roll 
                this.Roll();
-                Thread.Sleep(100);
+                //sleeps for 500 milliseconds
+                Thread.Sleep(500);
                 //to see if the cound contains 1 and it is the max meaning the highest set is 1
                 if (_die_counts.Contains(1) && _die_counts.Max() == 1)
                 {

@@ -56,7 +56,9 @@ namespace CMP1903_A1_2324
             }
             //runs 7out game
             sevensOut.Game(false);
-            //will stop when totalscore >=20
+            //resets totalscore
+            threeOrMore.totalscore = 0;
+            //runs three or more till score is over 20
             while (totalscore < 20)
             {
                 //runs three or more game
@@ -146,18 +148,23 @@ namespace CMP1903_A1_2324
             if (threeOrMore.totalscore >= 20)
             {
                 //writes test result to file
-                fw.WriteLine("three or more endes when players scoreis 20 or over test = passed");
-                Console.WriteLine("three or more endes when players scoreis 20 or over test = passed");
+                fw.WriteLine("three or more endes when players score is 20 or over test = passed");
+                Console.WriteLine("three or more endes when players score is 20 or over test = passed");
 
 
             }
             else
             {
                 //writes test result to file
-                fw.WriteLine("three or more endes when players scoreis 20 or over test= failed");
-                Console.WriteLine("three or more endes when players scoreis 20 or over test= failed");
+                fw.WriteLine("three or more endes when players score is 20 or over test= failed");
+                Console.WriteLine("three or more endes when players score is 20 or over test= failed");
 
             }
+            //calls roll method for testing
+            threeOrMore.roll_count = 5;
+            Array.Clear(threeOrMore.die_counts, 0, threeOrMore.die_counts.Length);
+            threeOrMore.die_values.Clear();
+            threeOrMore.Roll();
             //checks if die counts sum is over 5
 
             Debug.Assert(threeOrMore.die_counts.Sum()==5, "die count contains more than 5 counts ");
@@ -195,7 +202,26 @@ namespace CMP1903_A1_2324
                 Console.WriteLine("three or more die value dosn't contain more than 5 values test = failed");
 
             }
-            //closees file writing
+            //keeps how many should be keeped 
+            int keep_count = threeOrMore.die_counts.Max();
+            //calls method Remaining_dice
+            threeOrMore.Remaining_dice(threeOrMore.die_counts.Max());
+            Debug.Assert(threeOrMore.die_values.Count() == keep_count , "remaining die didn't keep the value ");
+            if (threeOrMore.die_values.Count() == keep_count)
+            {
+                //writes test result to file
+                fw.WriteLine("three or more  remaining die kept the values test = passed");
+                Console.WriteLine("three or more  remaining die kept the values test = passed");
+
+
+            }
+            else
+            {
+                //writes test result to file
+                fw.WriteLine("three or more  remaining die kept the values test= failed");
+                Console.WriteLine("three or more  remaining die kept the values test = failed");
+
+            }
             fw.Close();
             Console.WriteLine("all tests have been performed");
         }
