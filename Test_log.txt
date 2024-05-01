@@ -88,3 +88,21 @@ three or more endes when players score is 20 or over test = passed
 three or more die count dosn't contain more than 5 counts test = passed
 three or more die value dosn't contain more than 5 values test = passed
 three or more  remaining die kept the values test = passed
+01/05/2024 23:29:44
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players score is 20 or over test = passed
+three or more die count dosn't contain more than 5 counts test = passed
+three or more die value dosn't contain more than 5 values test = passed
+three or more  remaining die kept the values test = passed
+02/05/2024 00:38:29
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players score is 20 or over test = passed
+three or more die count dosn't contain more than 5 counts test = passed
+three or more die value dosn't contain more than 5 values test = passed
+three or more  remaining die kept the values test = passed

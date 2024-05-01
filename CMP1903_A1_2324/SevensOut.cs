@@ -63,8 +63,8 @@ namespace CMP1903_A1_2324
                 Thread.Sleep(1);
                 //prints die values and total
                 Console.WriteLine($"die 1 = {_Die_value1}\ndie 2 = {_Die_value2}\ntotal = {(_Die_value1+_Die_value2)}\n");
-                //sleaps for 100 millisecond
-                Thread.Sleep(100);
+                //sleaps for 250 millisecond
+                Thread.Sleep(250);
                 // if die values added = 7 
                 if (( _Die_value1 +  _Die_value2) == 7)
                 {
