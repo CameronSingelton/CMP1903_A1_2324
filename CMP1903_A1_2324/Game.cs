@@ -15,12 +15,39 @@ using System.Xml.Schema;
 namespace CMP1903_A1_2324
 {
     internal class Game
-    {/*
-     * The Game class should create three die objects, roll them, sum and report the total of the three dice rolls.
-     *
-     * EXTRA: For extra requirements (these aren't required though), the dice rolls could be managed so that the
-     * rolls could be continous, and the totals and other statistics could be summarised for example.
-     //old code
+    {
+        //creates instatnces of player
+        Player P1 = new Player();
+        Player P2 = new Player();
+        //creats instance of statiatics
+        Statistics statistics = new Statistics();
+        //creates instances of sevenout for different players
+        SevensOut P1sevensOut = new SevensOut();
+        SevensOut P2sevensOut = new SevensOut();
+        //creates instances of ThreeOrMore for different players
+        ThreeOrMore P1threeOrMore = new ThreeOrMore();
+        ThreeOrMore P2threeOrMore = new ThreeOrMore();
+        //creates instance of testing
+        Testing testing = new Testing();
+
+        // private varible that when true runs the code when false ends the program
+        private bool _Play_game = true;
+
+        //private varable to contain how many games have been played
+        private double _played_games = 0;
+        private int _played_TM = 0;
+        private int _played_7out=0;
+        //to tell if the game is computer or player
+        private string _comp = " ";
+        ///<summary> creates games and runs there method and contains the menu</summary>
+        public void Roll_dice()
+        {
+         /*
+         * The Game class should create three die objects, roll them, sum and report the total of the three dice rolls.
+         *
+         * EXTRA: For extra requirements (these aren't required though), the dice rolls could be managed so that the
+         * rolls could be continous, and the totals and other statistics could be summarised for example.
+         //old code
         //Methods
         ///<summary> creates dice and then rolls the dice and gives statistics</summary>
         ///<returns>returns total value and amount of rolls</returns>
@@ -72,32 +99,6 @@ namespace CMP1903_A1_2324
 
         }
         */
-        //creates instatnces of player
-        Player P1 = new Player();
-        Player P2 = new Player();
-        //creats instance of statiatics
-        Statistics statistics = new Statistics();
-        //creates instances of sevenout for different players
-        SevensOut P1sevensOut = new SevensOut();
-        SevensOut P2sevensOut = new SevensOut();
-        //creates instances of ThreeOrMore for different players
-        ThreeOrMore P1threeOrMore = new ThreeOrMore();
-        ThreeOrMore P2threeOrMore = new ThreeOrMore();
-        //creates instance of testing
-        Testing testing = new Testing();
-
-        // private varible that when true runs the code when false ends the program
-        private bool _Play_game = true;
-
-        //private varable to contain how many games have been played
-        private double _played_games = 0;
-        private int _played_TM = 0;
-        private int _played_7out=0;
-        //to tell if the game is computer or player
-        private string _comp = " ";
-        ///<summary> creates games and runs there method and contains the menu</summary>
-        public void Roll_dice()
-        {
             //runs untill break is run
             while (true)
             {
