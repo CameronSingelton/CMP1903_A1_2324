@@ -32,7 +32,7 @@ namespace CMP1903_A1_2324
                 //creates instance of game
                 Game game = new Game();
                 //calls game method of Rolls_dice
-                game.Roll_dice();
+                game.Menu();
             }
 #endif
         }

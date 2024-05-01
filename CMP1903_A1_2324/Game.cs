@@ -40,7 +40,7 @@ namespace CMP1903_A1_2324
         //to tell if the game is computer or player
         private string _comp = " ";
         ///<summary> creates games and runs there method and contains the menu</summary>
-        public void Roll_dice()
+        public void Menu()
         {
          /*
          * The Game class should create three die objects, roll them, sum and report the total of the three dice rolls.
