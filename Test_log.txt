@@ -115,3 +115,38 @@ dice number over 1 test = passed
 sevenout game dice add correctly test = passed
 sevenout game ended when number = 7 test = passed
 sevenout game ended when number = 7 test = passed
+//forgot to change test message but logic was implemented
+01/05/2024 12:39:16
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players scoreis 20 or over test = passed
+three or more die count dosn't go over 5 test= Failed
+three or more die value dosn't contain more than 5 values test = passed
+//failed because used length instead of sum
+01/05/2024 12:40:31
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players scoreis 20 or over test = passed
+three or more die count dosn't go over 5 test= Failed
+three or more die value dosn't contain more than 5 values test = passed
+01/05/2024 12:45:28
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players scoreis 20 or over test = passed
+three or more die count dosn't go over 5 test= Failed
+three or more die value dosn't contain more than 5 values test= Failed
+//failed because swaped the logic
+01/05/2024 12:48:54
+dice number under 6 test = passed
+dice number over 1 test = passed
+sevenout game dice add correctly test = passed
+sevenout game ended when number = 7 test = passed
+three or more endes when players scoreis 20 or over test = passed
+three or more die count dosn't contain more than 5 counts test = passed
+three or more die value dosn't contain more than 5 values test = passed

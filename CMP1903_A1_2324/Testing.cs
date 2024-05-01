@@ -146,16 +146,53 @@ namespace CMP1903_A1_2324
             if (threeOrMore.totalscore >= 20)
             {
                 //writes test result to file
-                fw.WriteLine("sevenout game ended when number = 7 test = passed");
-                Console.WriteLine("sevenout game ended when number = 7 test = passed");
+                fw.WriteLine("three or more endes when players scoreis 20 or over test = passed");
+                Console.WriteLine("three or more endes when players scoreis 20 or over test = passed");
 
 
             }
             else
             {
                 //writes test result to file
-                fw.WriteLine("sevenout game ended when number = 7 = Failed");
-                Console.WriteLine("sevenout game ended when number = 7 test = failed");
+                fw.WriteLine("three or more endes when players scoreis 20 or over test= failed");
+                Console.WriteLine("three or more endes when players scoreis 20 or over test= failed");
+
+            }
+            //checks if die counts sum is over 5
+
+            Debug.Assert(threeOrMore.die_counts.Sum()==5, "die count contains more than 5 counts ");
+            //checks if die counts is sum over 5
+            if (threeOrMore.die_counts.Sum()== 5)
+            {
+                //writes test result to file
+                fw.WriteLine("three or more die count dosn't contain more than 5 counts test = passed");
+                Console.WriteLine("three or more die count dosn't contain more than 5 counts test = passed");
+
+
+            }
+            else
+            {
+                //writes test result to file
+                fw.WriteLine("three or more die count dosn't contain more than 5 counts test= failed");
+                Console.WriteLine("three or more die count dosn't contain more than 5 counts test = failed");
+
+            }
+            //checks if die value dosn't contain more than 5 values
+            Debug.Assert(threeOrMore.die_values.Count() == 5, "die values over 5 ");
+            //checks if die value dosn't contain more than 5 values
+            if (threeOrMore.die_values.Count() == 5)
+            {
+                //writes test result to file
+                fw.WriteLine("three or more die value dosn't contain more than 5 values test = passed");
+                Console.WriteLine("three or more die value dosn't contain more than 5 values test = passed");
+
+
+            }
+            else
+            {
+                //writes test result to file
+                fw.WriteLine("three or more die value dosn't contain more than 5 values test= failed");
+                Console.WriteLine("three or more die value dosn't contain more than 5 values test = failed");
 
             }
             //closees file writing
